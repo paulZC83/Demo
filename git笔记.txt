@@ -1,1 +1,0 @@
-修改git remote时设置的远程仓库： git remote set-url origin https://github.com/paulZC83/testgit
