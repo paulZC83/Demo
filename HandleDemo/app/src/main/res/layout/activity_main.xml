@@ -27,10 +27,16 @@
         android:layout_toRightOf="@id/edit"
         android:layout_below="@id/tv"
         android:text="发送"/>
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt"
+        android:text="启动第二个界面，实现在主线程和子线程中相互给对方的Handler发送消息"/>
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bt"/>
+        android:layout_below="@id/bt2"/>
 </RelativeLayout>

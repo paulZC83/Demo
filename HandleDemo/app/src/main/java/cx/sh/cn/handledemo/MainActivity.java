@@ -1,5 +1,6 @@
 package cx.sh.cn.handledemo;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int[] imageSource = {R.drawable.demo1, R.drawable.demo2, R.drawable.demo3, R.drawable.demo6, R.drawable.demo9};
     private EditText edit;
     private Button bt;
+    private Button bt2;
 
 
     @Override
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edit = (EditText) findViewById(R.id.edit);
         bt = (Button) findViewById(R.id.bt);
         bt.setOnClickListener(this);
+        bt2 = (Button) findViewById(R.id.bt2);
+        bt2.setOnClickListener(this);
 
     }
 
@@ -51,12 +55,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        // 输入1和1以外的数值区别发送消息
-        if ("1".equals(edit.getText().toString())) {
-            mHandler.sendEmptyMessage(1);
-        } else {
-            mHandler.sendEmptyMessage(0);
+        switch (view.getId()){
+            case R.id.bt:
+                // 输入1和1以外的数值区别发送消息
+                if ("1".equals(edit.getText().toString())) {
+                    mHandler.sendEmptyMessage(1);
+                } else {
+                    mHandler.sendEmptyMessage(0);
+                }
+
+                break;
+            case R.id.bt2:
+                startActivity(new Intent(MainActivity.this, Main2Activity.class));
+                break;
         }
+
 
     }
 
